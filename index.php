@@ -131,7 +131,7 @@
       ],
       listChecked: ['sex', 'agree'],
       listSelected: ['choose'],
-    })
+    });
   </script>
 </body>
 

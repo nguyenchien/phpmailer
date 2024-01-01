@@ -25,6 +25,23 @@ var Validator = function (options) {
         formElement.submit();
       } else {
         console.log('form error...');
+        
+        // Scroll to the top of the page
+        function scrollToTop() {
+          // Scroll to the top with smooth behavior (if supported)
+          if ('scrollBehavior' in document.documentElement.style) {
+            window.scrollTo({
+              top: 0,
+              behavior: 'smooth'
+            });
+          } else {
+            // For browsers that don't support smooth scrolling
+            window.scrollTo(0, 0);
+          }
+        }
+
+        // Call the scrollToTop function to scroll to the top of the page
+        scrollToTop();
       }
     }
   }
