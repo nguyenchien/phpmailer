@@ -30,7 +30,9 @@ if ($_FILES['image']['name']) {
   $imageName = $_FILES['image']['name'];
   if (file_exists($imagePath)) {
     $imageInfo = getimagesize($imagePath); // Get image information
-    $imageType = $imageInfo['mime']; // Get the image MIME type
+    if ($imageInfo) {
+      $imageType = $imageInfo['mime']; // Get the image MIME type
+    }
   }
 }
 if ($_FILES['image02']['name']) {
@@ -55,7 +57,9 @@ if ($_FILES['image02']['name']) {
   $imageName02 = $_FILES['image02']['name'];
   if (file_exists($imagePath02)) {
     $imageInfo02 = getimagesize($imagePath02); // Get image information
-    $imageType02 = $imageInfo02['mime']; // Get the image MIME type
+    if ($imageInfo02) {
+      $imageType02 = $imageInfo02['mime']; // Get the image MIME type
+    }
   }
 }
 
@@ -66,11 +70,10 @@ $hasErrorImage02 = false;
 if (count($errors) > 0) {
   $hasError = true;
 }
-
-if ($errors['fileSize'] || $errors['fileType']) {
+if (isset($errors['fileSize']) || isset($errors['fileType'])) {
   $hasErrorImage = true;
 }
-if ($errors['fileSize02'] || $errors['fileType02']) {
+if (isset($errors['fileSize02']) || isset($errors['fileType02'])) {
   $hasErrorImage02 = true;
 }
 ?>
