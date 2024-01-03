@@ -38,7 +38,6 @@ try {
     // Extracting MIME type and base64-encoded image data from data URI
     list($type, $data) = explode(";", $imageDataUrl);
     list(, $data) = explode(',', $data);
-    list(, $ext) = explode('/', $type);
 
     // Decoding base64-encoded image data
     $decodedData = base64_decode($data);
@@ -56,7 +55,6 @@ try {
     // Extracting MIME type and base64-encoded image data from data URI
     list($type02, $data02) = explode(";", $imageDataUrl02);
     list(, $data02) = explode(',', $data02);
-    list(, $ext02) = explode('/', $type02);
 
     // Decoding base64-encoded image data
     $decodedData02 = base64_decode($data02);

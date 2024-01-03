@@ -50,7 +50,7 @@ if ($_FILES['image02']['name']) {
       $errors['fileType02'] = "Your image 02 error. Invalid file type. Allowed file types are: " . implode(', ', $allowedTypes);
     }
   }
-  // Display image as HTMl
+  // Display image as HTML
   $imagePath02 = $_FILES['image02']['tmp_name'];
   $imageName02 = $_FILES['image02']['name'];
   if (file_exists($imagePath02)) {
