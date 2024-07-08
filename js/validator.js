@@ -40,8 +40,14 @@ var Validator = function (options) {
           }
         }
 
-        // Call the scrollToTop function to scroll to the top of the page
-        scrollToTop();
+        // scrolling when the form have error
+        let elements = document.querySelectorAll('.c-form01-row.is-invalid');
+        if (elements.length === 1) {
+          let element = document.querySelector('.c-form01-row.is-invalid');
+          element.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          scrollToTop();
+        }
       }
     }
   }
